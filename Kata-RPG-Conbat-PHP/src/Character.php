@@ -5,18 +5,47 @@ namespace App;
 use phpDocumentor\Reflection\Type\This;
 
 class Character {
-    private int $helth;
+    private int $health;
     private int $level;
     private bool $live;
 
     public function _construct()
     {
-        $this->helth = 1000;
+        $this->health = 1000;
         $this->level = 1;
         $this->live = true;
     }
 
-        
+        public function getHealth()
+        {
+            return $ $this->health;
+        }
+
+        public function setHealth ($health)
+        {
+            $this->health = $health;
+            return $this;
+        }
+        public function getLevel()
+        {
+            return $this->Level;
+        }
+        public function getLife()
+        {
+            if ($this->health <= 0){
+                $this->live=false;
+                return $this->live;
+            } 
+            return $this->live;
+        }
+        public function attack($enemy, $attackPoins)
+        {
+            $enemy->health = $enemy->health - $attackPoins;
+        }
+        public function health($friend,$healPoins)
+        {
+            $friend->health = $friend->health + $healPoins;
+        }
 
     
     
